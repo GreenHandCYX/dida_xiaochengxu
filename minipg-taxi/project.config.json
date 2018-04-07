@@ -1,0 +1,86 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.1",
+	"appid": "wxcee6d1cec9466b88",
+	"projectname": "%E5%98%80%E5%97%92%E5%97%92",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "支付",
+					"pathName": "pages/pay/pay",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "优惠券",
+					"pathName": "pages/coupon/coupon",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "支付评价",
+					"pathName": "pages/evaluate/evaluate",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "取消订单",
+					"pathName": "pages/cancelled/cancelled",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "取消订单原因",
+					"pathName": "pages/reason/reason",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "城市",
+					"pathName": "pages/city/city",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的优惠券",
+					"pathName": "pages/myCoupon/myCoupon",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "橙星规则",
+					"pathName": "pages/rule/rule",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "未开通城市",
+					"pathName": "pages/notyetcity/notyetcity",
+					"query": ""
+				}
+			]
+		}
+	}
+}

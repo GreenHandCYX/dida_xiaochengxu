@@ -1,0 +1,13 @@
+/* pages/treaty/treaty.wxss */
+page{
+  width: 100vw;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 30rpx;
+      color: #666;
+      font-size: 28rpx;
+}
+text text{
+  font-weight: bold;
+  font-size: 34rpx;
+}

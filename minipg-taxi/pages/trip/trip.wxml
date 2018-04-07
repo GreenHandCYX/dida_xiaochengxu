@@ -1,0 +1,20 @@
+<!--pages/trip/trip.wxml-->
+<import src="../order/order.wxml" />
+<view class="map">
+  <map id='map' markers='{{markers}}' class="{{payWindowMap ? 'mapMain payWindowMap' : 'mapMain'}}" bindtap='bindHideKeyboard'>
+    <!--起始点选择  -->
+    <template is="orderAddress-top" data="{{showRouteTop,showOrderAddress,nowStart,nowEnd,hasPrice,showCallBtn,single_price,coupon_price,hasCallStart,downTimeAll,orderAddress_top_secNumText,countdownEnd}}" />
+       <!--调度费弹框-->
+    <template is="dispatch" data="{{showClear,showdispatchAll,extra_feeNum,extra_fee,removedispatch,openDispatch,selectDispatch,showDispatch,showdispatchBtn,closedispatchBtn}}" />
+      <!-- 司机信息／司机发送的支付信息 -->
+    <template is="orderStatus-bottom" data="{{showDiverInfo,showPayinfo,showpayinfoAdd,diverSentPay,payinfoBaseNum,payAll,payinfoAdd,payOrder,diverName,diverCar,diverCompany,diverImg,callToDiver,showActivePay,showPassivePay}}" />
+    <!--预计到达时间 ／剩余支付时间  -->
+    <template is="orderStatus-top" data="{{showAboardTop,showpayTime,showarrivedTime,paytimeAll,estimatedTime,arrivedtimeSec,orderStatus_top_secNumText}}" />
+    <!--取消弹框-->
+    <template is="CancelBox" data="{{replied,showCancelBox,closeCancelBox,cancelTaxiRide}}" />
+    <!--底部取消订单按钮-->
+    <template is="orderBtn-bottom" data="{{showCancleBtn,popcancelBox}}" />
+  </map>
+  <!--支付输入弹框  -->
+  <template is="payWindow" data="{{focus,inpBlur,payinfoBaseNum,payinfoAdd,payAll,payOrder,cancelActivePayOrder,moneyChange}}" />
+</view>

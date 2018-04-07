@@ -1,0 +1,57 @@
+ <import src="../order/order.wxml"/>
+
+<template is="orderStatus-pay-top" data="{{showDiverInfo,diverName,diverCar,diverCompany,diverImg}}"/> 
+<text class="sumtext" wx:if="{{text1}}">共计<text class="sum">{{price}}</text>元</text>
+<view class="offlinetext" wx:if="{{text2}}">已线下支付</view>
+<view bindtap="showModal" bindload="imageLoad" class="evaluate" wx:if="{{evainfo}}">
+	<text class="evatext1">评价服务</text>
+	<text class="evatext2"></text>
+	<text class="arrow">></text>
+</view>
+<view class="back" bindtap="back">回到首页</view>
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class="commodity_quxiao" bindtap="hideModal" wx:if="{{showModalStatus}}">
+    <text class='commodity-cancel'>取消</text>
+    <text class='commodity-text'>评价服务</text>
+  </view>
+  <view class='commodity-evaluate'>
+    <view class='rule' bindtap="cxrule"><text>评价本次服务是否符合橙星标准</text><image src='https://static.didapinche.com/pics//g/wxxcx/linkorange.png'/></view>
+    <!-- <view class='commodity-evaluate-list'>
+      <view class='list-style list-style-text'>车内是否有异味？</view>
+      <view class='list-style border status1'><image src='https://static.didapinche.com/pics//g/wxxcx/iconDefaultYes.png'/><text>干净</text></view>
+      <view class='list-style border status2'><image src='https://static.didapinche.com/pics//g/wxxcx/iconDefaultNo.png'/><text>有异味</text></view>
+    </view>
+    <view class='commodity-evaluate-list'>
+      <view class='list-style list-style-text'>车内是否有异味？</view>
+      <view class='list-style border status1'><image src='https://static.didapinche.com/pics//g/wxxcx/iconDefaultYes.png'/><text>干净</text></view>
+      <view class='list-style border status2'><image src='https://static.didapinche.com/pics//g/wxxcx/iconDefaultNo.png'/><text>有异味</text></view>
+    </view> -->
+    <view class='commodity-evaluate-list' wx:for='{{answerList}}' id='{{index}}'wx:key='{{index}}'>
+    	<view class='list-style list-style-text'>{{item.title}}</view>
+	  <view class='list-style border status1{{item.falg == 1?" selected1":""}}' data-index='{{index}}'  data-select="a" bindtap='highligt'><image src='https://static.didapinche.com/pics//g/wxxcx/{{item.falg!=1?"iconDefaultYes":"iconYes"}}.png'/><text>{{item.optionOne}}</text></view>
+	  <view class='list-style border status2{{item.falg == 2?" selected2":""}}' data-index='{{index}}'  data-select="b" bindtap='highligt'><image src='https://static.didapinche.com/pics//g/wxxcx/{{item.falg!=2?"iconDefaultNo":"iconNo"}}.png'/><text>{{item.optionTwo}}</text></view>
+	</view>
+  </view>
+  <view class='orangeBtn submit' bindtap='submit'>匿名提交</view>
+</view>
+<view class="evacontent" wx:if="{{evainfo1}}">
+  <view class="evatitle"><view class="evatitle1">我的评价</view></view>
+  <view class="taglist">
+    <view class="tag" wx:for='{{evalist}}' wx:key="{{item}}">{{item}}</view>
+    <!-- <view class="tag">车内无异味</view>
+    <view class="tag">车内无异味</view>
+    <view class="tag">车内无异味</view>
+    <view class="tag">车内无异味</view> -->
+  </view>
+</view>
+<view wx:if="{{evainfo2}}" class="overtime">评价已超时，下次早点吧</view>
+
+
+
+
+
+
+
+
+

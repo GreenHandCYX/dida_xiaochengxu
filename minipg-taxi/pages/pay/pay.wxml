@@ -1,0 +1,29 @@
+<view class="pay" wx:if="{{payhome}}">
+  <view class="line paycont">
+    <view class="block paytext">即将完成支付</view>  
+    <view class="block paytime" wx:if="{{hideTime}}">剩余支付时间
+          <text class="orange">{{paytimeAll}}</text>
+    <!-- <text class='colorstyle'>{{min}}</text>分<text class='colorstyle'>{{sec}}</text>秒 -->
+    </view>
+  </view>
+  <view class="line coupon" bindtap='getCouponList'>
+    <text class="coupon-text">优惠券<text class="coupon-num">（{{availableCoupons_count}}张可用）</text></text>
+    <view class='coupon-use'><text class='no-use' wx:if="{{title}}">{{title}}</text><image src='https://static.didapinche.com/pics//g/wxxcx/arrow.png' class='pay-image'/></view>
+  </view>
+  <view class='right sum' wx:if="{{hide}}">余额抵扣{{total_balance1}}元</view>
+  <view class='right paymoney' wx:if="{{hidePrice}}">仍需支付<text class='colorstyle size'>{{finalPrice}}</text>元</view>
+  <view class='finalpay orangeBtn' bindtap='generateOrder'>去支付（仍需支付{{finalPrice}}元）</view>
+</view>
+<view wx:if="{{paysuccess}}">
+  <view class="payIcon"><image src="https://static.didapinche.com/pics//g/wxxcx/iconPaymentSuccess.png"></image></view>
+  <view class="payInfotext">支付成功</view>
+  <view class="payBtn" bindtap='toEvaluate'>查看订单</view>
+  <view class="payBtn btnStyle" bindtap='backindex'>返回首页</view>
+</view>
+<view wx:if="{{payfail}}">
+  <view class="payIcon"><image src="https://static.didapinche.com/pics//g/wxxcx/iconPaymentFailure.png"></image></view>
+  <view class="payInfotext">暂未收到支付结果</view>
+  <view class="nopayInfotext">可能会有几分钟延迟，请手动刷新支付结果你也可选择重新支付，若本次支付已扣款，系统将会以余额的形式返款</view>
+  <view class="payBtn" bindtap='nopay'>刷新支付结果</view>
+  <view class="payBtn btnStyle" bindtap='backpay'>重新支付</view>
+</view>

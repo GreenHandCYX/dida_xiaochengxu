@@ -1,0 +1,26 @@
+/* pages/money/money.wxss */
+.money {
+  width: 100vw;
+  height: 100vh;
+}
+.money-top {
+  width: 100%;
+  height: 300rpx;
+  background: url('https://static.didapinche.com/pics//g/wxxcx/moneyBg.png') no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-size: 34rpx;
+}
+.money-top text:nth-child(2) {
+  font-size: 100rpx;
+}
+.money-bottom {
+  width: 100%;
+  height: 148rpx;
+  background: #fff;
+  color: rgb(157, 163, 180);
+  font-size: 26rpx;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 0 60rpx;
+}

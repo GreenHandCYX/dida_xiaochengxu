@@ -1,0 +1,80 @@
+/* pages/myHome/myHome.wxss */
+
+.content {
+  width: 100vw;
+  height: 100vh;
+  background: #f5f5f9;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.userInfo image {
+  width: 186rpx;
+  height: 186rpx;
+  border-radius: 50%;
+  margin-top: 100rpx;
+}
+
+.userInfo .userName {
+  margin-top: 50rpx;
+  color: #000;
+  font-size: 40rpx;
+  font-family: PingFangSC-Regular;
+}
+
+.userInfo .score {
+  margin-top: 10rpx;
+  color: rgb(255, 117, 0);
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  margin-bottom: 30rpx;
+}
+
+.functonal {
+  width: 100vw;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.functonal view {
+  width: 90vw;
+  height: 100rpx;
+  line-height: 100rpx;
+  position: relative;
+  margin: 0 auto;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular;
+}
+
+.functonal view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.functonal view:nth-child(1), .functonal view:nth-child(2) {
+  border-bottom: 1px solid rgb(229, 229, 229);
+}
+
+.functonal view image {
+  width: 16rpx;
+  height: 26rpx;
+  margin-right: 28rpx;
+}
+
+.signout {
+  width: 100vw;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background: #fff;
+  font-size: #000;
+}

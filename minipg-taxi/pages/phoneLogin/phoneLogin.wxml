@@ -1,0 +1,23 @@
+<view class="wrap">
+  <text class="logintext">手机号验证码登录</text>
+  <view class="confirm">
+    <view class="info Country">
+      <text class='zone'>+86 </text>
+      <input class="input" placeholder="请输入手机号" placeholder-style="color:#ddd;" type="number" pattern="[0-9]*" maxlength='11' bindinput="bindKeyInput" />
+    </view>
+    <view class="info">
+      <text class='code'>验证码</text>
+      <input class="input border" placeholder="请输入验证码" placeholder-style="color:#ddd;" bindinput='bindCodeInput' type="number" pattern="[0-9]*" maxlength='5' />
+      <button bindtap='getCode' disabled='{{sentable}}' class="getCode">{{codeTime}}</button>
+    </view>
+  </view>
+  <button class="login Obtn" bindtap='signIn'>验证并登录</button>
+  <view class='foot'>
+    <text>该服务由嘀嗒出行提供</text>
+    <view>
+      登录即表示同意
+      <text bindtap='toAgreement'>《用户协议》</text>和
+      <text bindtap='toTreaty'>《隐私条约》</text>
+    </view>
+  </view>
+</view>

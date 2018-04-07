@@ -1,0 +1,50 @@
+/* pages/login2/login.wxss */
+.title{
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 100rpx 0 ; */
+  margin-bottom: 84rpx;
+}
+.title image{ 
+width: 100vw;
+height: 434rpx;
+}
+
+.Obtn{
+  width: 80vw;
+  background: rgb(255,117,0);
+  color: #fff;
+  margin-bottom: 40rpx;
+  font-size: 36rpx;
+}
+.getPL{
+ width: 80vw;
+ font-size: 28rpx;
+ background: transparent;
+ color: rgb(119,124,139);
+}
+.getPL::after{
+ border: none;
+}
+
+.foot{
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+   margin-bottom: 40rpx;
+}
+.foot text,.foot view{
+text-align: center;
+font-size: 20rpx;
+color: rgb(157, 163, 180);
+}
+
+.foot view text{
+color: rgb(255, 117, 0);
+}

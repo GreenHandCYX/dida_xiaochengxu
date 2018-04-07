@@ -1,0 +1,37 @@
+/**index.wxss**/
+@import '../order/order.wxss';
+page {
+  background: #fff;
+  font-size: 4vw;
+}
+.text {
+	text-align:center;
+	font-size:15px;
+	margin:20px auto;
+}
+.text1 {
+	color:#fff;
+  background:#000;
+  opacity:0.2;
+  width:60%;
+  margin:60px auto;
+  text-align:center;
+  font-size:16px;
+  line-height:35px;
+  border-radius:4px;
+  height:35px;
+}
+.text2 {
+	color:rgb(157,163,180);
+}
+.back {
+  position:fixed;
+  bottom:0;
+  height:57px;
+  line-height:57px;
+  color:rgb(119,124,139);
+  font-size:34rpx;
+  text-align:center;
+  width:100%;
+  border:1px solid #ececec;
+}

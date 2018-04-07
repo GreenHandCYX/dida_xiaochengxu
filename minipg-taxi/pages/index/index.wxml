@@ -1,0 +1,22 @@
+<import src="../order/order.wxml" />
+<view class="map" style='display:block'>
+  <map id="map" longitude="{{lng}}" circles='{{circles}}' latitude="{{lat}}" scale="{{scale}}" bindcontroltap="controltap" controls='{{controls}}' markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location >
+    <template is="orderAddress-top" data="{{showOrderAddress,showRouteTop,nowStart,nowEnd,showCallBtn,hasCallStart}}" />
+    <template is="routePrice" data="{{deduct_price,coupon_price,single_price,callDidaTaxi,hasPrice}}" />
+    <template is="orderBtn-bottom" data="{{showCallBtn,callDidaTaxi}}" />
+    <cover-image src='https://static.didapinche.com/pics//g/wxxcx/me.png' class='myBtn' bindtap='gotoMyHome' wx:if="showMyHomeBtn"></cover-image>
+
+<cover-view class='tooltip'  hidden="{{!hastip}}">
+<cover-view class='vertical-middle'></cover-view>
+      <cover-view class='vertical-middle'></cover-view>
+      {{!tooltip.text?('最近司机约'+(tooltip.hours> 0?tooltip.hours+'小时':'')+(tooltip.minutes>0?tooltip.minutes+'分钟到达':'1分钟内到达')
+      ):tooltip.text}} 
+    <cover-view class='vertical-middle'></cover-view>
+     <cover-view class='vertical-middle'></cover-view>
+</cover-view>
+<cover-view class='changeReturn' wx:if="{{changeShow}}" bindtap='changeEvent'>
+<cover-image class='returnhomeBg' src='http://img.didapinche.com/pics//g/wxxcx/returnFirst.png'></cover-image>
+</cover-view>   
+
+  </map>
+</view>

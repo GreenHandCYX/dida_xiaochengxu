@@ -1,0 +1,39 @@
+<!--pages/reason/reason.wxml-->
+<view class='reasonCon'>
+<view class='tip'>当日拒绝车主超过3次后，就不能下单了哦，请谨慎操作</view>
+<radio-group class='reasonList' bindchange='radiochange'>
+  <label class='reasonItem'>
+    <text>我的行程有变化</text>
+    <radio color='rgb(255, 122, 63)' value='我的行程有变化'></radio>
+  </label>
+ <label class='reasonItem'>
+    <text>我下错订单了</text>
+    <radio color='rgb(255, 122, 63)' value='我下错订单了'></radio>
+  </label>
+  <label class='reasonItem'>
+    <text>车主无法按时到达</text>
+    <radio color='rgb(255, 122, 63)' value='车主无法按时到达'></radio>
+  </label>
+  <label class='reasonItem'>
+    <text>车主有事，无法完成服务</text>
+    <radio color='rgb(255, 122, 63)' value='车主有事，无法完成服务'></radio>
+  </label>
+  <label class='reasonItem'>
+    <text>车主联络不上</text>
+    <radio color='rgb(255, 122, 63)' value='车主联络不上'></radio>
+  </label>
+<label class='more' bindtap='showExtra'>
+<view class='reasonItem'>
+  <text>其他原因</text>
+<radio color='rgb(255, 122, 63)' value=''></radio>
+</view>
+
+<textarea class='extra' value='{{textVal}}'bindinput='inputVal' wx:if='{{showExtraInp}}'></textarea>
+</label>
+</radio-group>
+
+
+</view>
+<view class='confirm'>
+  <button bindtap='submitReason'>确认提交</button>
+</view>

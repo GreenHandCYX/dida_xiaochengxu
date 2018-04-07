@@ -1,0 +1,84 @@
+<template name="couponTem">
+  <view class="coupon" data-realUnitPrice="{{item.real_unit_price}}" data-title="{{item.coupon_set_info.title}}" data-unitCost="{{item.coupon_set_info.unit_cost}}" data-id="{{item.id}}" data-enable="{{item.enable}}" bindtap='getPayInfo'>
+    <image src='https://static.didapinche.com/pics//g/wxxcx/bgcoupon.png' class='couponImg'></image>
+    <view class='cont'>
+      <view class="contMoney" id="{{item.enable?'':'useless'}}" wx:if="{{item.coupon_set_info.coupon_type!=2}}">{{foo.toZore(item.price)}}<text class='small'>{{foo.toZore(item.price,true)}}</text><text class='small'>元</text>
+      </view>
+      <view class="contMoney" wx:if="{{item.coupon_set_info.coupon_type==2}}">{{foo.toZore1(item.coupon_set_info.discount)}}<text class='small'>{{foo.toZore1(item.coupon_set_info.discount,true)}}</text><text class='small'>折</text></view>
+      <view class="unitPrice" wx:if="{{item.coupon_set_info.coupon_type==2}}">最多可抵{{item.price}}元</view>
+      <view class="contText">
+        <text class='text style' id="{{item.enable?'':'useless'}}">{{item.coupon_set_info.title}}</text>  
+        <text class='text' id="{{item.enable?'':'useless'}}">{{foo.changeTime(item.create_time)}}至{{foo.changeTime(item.expire_time)}}有效</text>
+      </view>
+      <view class="contImg">
+        <image src="https://static.didapinche.com/pics//g/wx/img/Group2.png"></image>
+      </view>
+      <image src="https://static.didapinche.com/pics//g/wxxcx/Rectangle2Copy.png" class="line"></image>
+      <view class="footerText" id="{{item.enable?'':'useless'}}">{{item.coupon_set_info.description}}</view>
+    </view>
+  </view>
+</template>
+<block wx:for="{{couponList}}" wx:key="{{item}}">
+  <template is="couponTem" data="{{item}}" wx:if="{{item.enable}}"></template>
+  <template is="couponTem" data="{{item}}"  wx:if="{{!item.enable}}"></template>
+</block>
+<view class='no-use' bindtap='noUse' wx:if="{{nouseHide}}">不使用优惠券</view>
+<view wx:if="{{noneCoupon}}" class="no">
+  <view class="payIcon"><image src="https://static.didapinche.com/pics//g/wxxcx/icon_details_coupon_empty.png"></image></view>
+  <view class="nopayInfotext">常来嘀嗒，不会错过各种优惠机会</view>
+</view>
+<wxs module="foo">
+  var changeTime = function(time) {
+    var year = time.substring(0, 4)
+    var month = time.substring(4, 6)
+    var day = time.substring(6, 8)
+    return year + '/' + month  + '/' + day;
+  }
+  var toZore = function(price, small) {
+    var price = price + ''
+    if (small) {
+      if (price.indexOf('.') === -1) {
+        return '.00';
+      } else {
+      if(price.split('.')[1].length===2){
+          return  '.'+price.split('.')[1];
+      }else{
+          return  '.'+price.split('.')[1]+'0';
+      }
+      }
+    } else {
+      if (price.indexOf('.') === -1) {
+        return price;
+      } else {
+        return price.split('.')[0];
+      }
+    }
+
+  }
+  var toZore1 = function(price, small) {
+    var price = price + '';
+    if (small) {
+      if (price.indexOf('.') === -1) {
+        return '.00';
+      } else {
+        if(price.split('.')[1].length===2){
+            return price.split('.')[1].substring(1,2);
+        }else{
+            return price.split('.')[1].substring(1,2)+'0';
+        }
+      }
+    } else {
+      if (price.indexOf('.') === -1) {
+        return price;
+      } else {
+        return price.split('.')[1].substring(0,1)+'.';
+      }
+    }
+
+  }
+  module.exports = {
+    changeTime: changeTime,
+    toZore: toZore,
+    toZore1: toZore1
+  }
+</wxs>

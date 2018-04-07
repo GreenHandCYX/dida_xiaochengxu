@@ -1,0 +1,31 @@
+
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/phoneLogin/phoneLogin",
+    "pages/myHome/myHome",
+    "pages/order/order",
+    "pages/pay/pay",
+    "pages/coupon/coupon",
+    "pages/route/route",
+    "pages/evaluate/evaluate",
+    "pages/trip/trip",
+    "pages/picker/picker",
+    "pages/cancelled/cancelled",
+    "pages/money/money",
+    "pages/reason/reason",
+    "pages/city/city",
+    "pages/agreement/agreement",
+    "pages/treaty/treaty",
+    "pages/myCoupon/myCoupon",
+    "pages/rule/rule",
+    "pages/notyetcity/notyetcity"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "嘀嗒出行",
+    "navigationBarTextStyle": "black"
+  }
+}

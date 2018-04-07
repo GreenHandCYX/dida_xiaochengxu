@@ -1,0 +1,19 @@
+<view class='cont'>
+  <image src="https://static.didapinche.com/pics//g/chengxing/img/img1.jpg" class="banner"></image>
+  <image src='https://static.didapinche.com/pics//g/chengxing/img/img2.jpg' class="titleImg"></image>
+  <text class="text">曾经，出租车被誉为城市之星，颜色统一、规格一致的出租车行驶在道路上，不仅是城市交通的主力，更是展示城市形象的一道窗口。</text>
+  <text class="text">可是随着交通工具的进步，出租车却并没有提升自身品质，让很多人抱怨<text class="bold">打车难、车况差、服务不好、车内环境不佳</text>，渐渐丧失了竞争力和地位。</text>
+  <text class="text">而且由于出租车公司和交委部门缺乏在线评估手段，只能通过投诉和抽检来规范服务，对于服务和车况较好的出租车，也缺乏有效的奖励手段，出租车行业的情况迟迟得不到改善。</text>
+  <text class="text">现在，嘀嗒出行全新推出<text class="bold">“橙星出租车计划“</text>，向出租车行业发出“橙星服务”倡议。</text>
+  <text class="text"><text class="bold">努力提升橙星出租车比例，提高出租车的城市影响力，改变出租车现有形象，让大家信任出租车、爱上出租车</text></text>
+  <image src="https://static.didapinche.com/pics//g/chengxing/img/img3.jpg" class="titleImg"></image>
+  <text class="text">嘀嗒出行提出<text class="bold">“橙星5+1服务标准”</text>，通过在线服务评测、线下服务监控和实地鉴定等手段建立“橙星服务信息库”，评选“橙星出租车"。您搭乘出租车后，可以马上开始根据“橙星5+1标准“评估出租车（7.0.5以上版本）。</text>
+  <image src="https://static.didapinche.com/pics//g/chengxing/img/img4.jpg" class="Img1"></image>
+  <text class="text"><text class="bold">请真实反馈司机表现的好坏，让我们携手共建“橙星出租车计划”</text></text>
+  <image src="https://static.didapinche.com/pics//g/chengxing/img/img5.jpg" class="titleImg1"></image>
+  <text class="text">自3月开始，您就能有机会呼叫到首批平台评估的橙星出租车，<text class="bold">未来您还可以单独向橙星司机下单，拥有专属橙星司机，体验更优质的乘车服务。</text></text>
+  <text class="text"><text class="bold">*履约、守时</text>是橙星出租车服务的基本准则。</text>
+  <text class="text"><text class="bold">*礼貌的谈吐、清新的空气、整洁的车内环境</text>，让您在细节处感受到服务的品质。</text>
+  <text class="text"><text class="bold">*平稳的驾驶、娴熟的车技、精准的认路</text>，用更专业的技能带给您更愉悦的出行。</text>
+  <image src="https://static.didapinche.com/pics//g/chengxing/img/img6.jpg" class="Img"></image>
+</view>

@@ -1,0 +1,30 @@
+
+<view class="title">
+
+  <view  bindtap='getCurCity' >
+    <view class='title_tit'>当前定位城市</view>
+    <view class="title_list">
+    <text class='city_block'>{{region}}</text>
+    </view>
+  </view>
+ 
+</view>
+
+<scroll-view scroll-y="true" style="height: {{winHeight}}px;" scroll-into-view="{{scrollTopId}}" class="city_list">
+  <block wx:for="{{city}}" wx:for-index="idx" wx:key='{{index}}' wx:for-item="cityName">
+    <text id="{{idx=='热'?'re':idx}}" class="list_tit">{{idx}}</text>
+    <block  wx:key='{{index}}' wx:for="{{cityName}}">
+      <view class="list_con" data-city="{{item.name}}" bindtap="bindCity">{{item.name}}</view>
+    </block>
+  </block>
+</scroll-view>
+<view class="scroll_list"  bindtouchstart="chStart" bindtouchend="chEnd" catchtouchmove="chMove" style="background: rgba(0,0,0,{{trans}});">
+  <block wx:for="{{city}}" wx:key='{{index}}' wx:for-index="idx" wx:for-item="cityName">
+    <block>
+      <view id="{{idx=='热'?'re':idx}}" class="scroll_list_chi" style="line-height:{{lineHeight}}px ; height:{{lineHeight}}px ;font-size:{{lineHeight/1.7}}px;" bindtouchstart="getWords" bindtouchend="setWords">{{idx=='re'?'热':idx}}
+        <view hidden="{{hidden}}" class="showwords">
+          {{showwords}}</view>
+      </view>
+    </block>
+  </block>
+</view>

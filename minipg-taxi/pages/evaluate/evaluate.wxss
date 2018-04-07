@@ -1,0 +1,251 @@
+/**index.wxss**/
+@import '../order/order.wxss';
+page {
+  background: #fff;
+  font-size: 4vw;
+}
+.sumtext {
+  display: block;
+  width: 100%;
+  height: 15vw;
+  line-height: 15vw;
+  text-align: center;
+  color: rgb(41, 45, 57);
+  font-size: 4vw;
+}
+.sum {
+  font-size: 6vw;
+  letter-spacing: 2px;
+}
+.evaluate {
+  width: 100%;
+  height: 44px;
+  position: relative;
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+}
+.evatext1 {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 18px;
+  height: 24px;
+  line-height: 24px;
+  color: rgb(41, 45, 47);
+}
+.evatext2 {
+  position: absolute;
+  top: 10px;
+  right: 35px;
+  font-size: 18px;
+  height: 24px;
+  line-height: 24px;
+  color: rgb(255,117,0);
+}
+.arrow {
+  position: absolute;
+  right: 15px;
+  widows: 10px;
+  height: 24px;
+  line-height:19px;
+  font-size: 18px;
+  top: 10px;
+  color: rgb(199,199,204);
+}
+.buydes-dialog-container{  
+    width: 100%;  
+    height: 100%;  
+    justify-content: space-between;  
+    position: fixed;  
+    z-index: 9999; 
+    top: 0;
+    left: 0;
+    color: #000;
+}  
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+  border:1px solid #000;
+}
+.commodity_quxiao{
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  border-bottom: 1px solid #ececec;
+}
+.commodity-evaluate {
+  margin-bottom:72px;
+}
+.commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+}
+.commodity-cancel{
+  color: rgb(157,163,180);
+  font-size: 15px;
+  text-align: left;
+  margin-left: 15px;
+}
+.commodity-text{
+  color: rgb(73,79,97);
+  width: 30%;
+  margin-left: 30%; 
+  font-size: 17px;
+  justify-content: space-between;
+}
+.rule{
+  width: 92%;
+  margin-left: 4%;
+  color: rgb(255,117,0);
+  font-size:3.5vw;
+  justify-content: space-between;
+  text-align: center;
+  border-bottom: 1px solid rgb(236,236,236);
+  height: 50px;
+  line-height: 50px;
+}
+
+.rule image{
+  display:inline-flex;
+  width:15px;
+  height:15px;
+  position:absolute;
+  right:20%;
+  top:63px;
+}
+.submit{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.commodity-evaluate-list{
+  margin-top: 20px;
+  width: 94%;
+  margin-left: 3%;
+  height: 30px;
+  line-height: 30px;
+  color: rgb(119,124,139);
+}
+.commodity-evaluate-list image{
+  width: 14px;
+  height: 14px;
+  float: left;
+  margin: 5px 5px 0 10px;
+}
+.list-style{
+  float: left;
+}
+.list-style-text{
+  width: 50%;
+  font-size: 15px;
+}
+.border{
+  border: 1px solid rgb(189,192,203);
+  border-radius:15px;
+  width: 75px;
+  font-size: 13px; 
+  justify-content: space-between;
+  height:24px;
+  margin-top:3px;
+  line-height:24px;
+}
+.status1{
+  margin-right: 15px;
+}
+.status2{
+  margin-right: 0;
+}
+.evacontent {
+  color:rgb(189,192,203);
+  margin:30px auto;
+  font-size:13px;
+}
+.evatitle {
+  text-align:center;
+  position:relative;
+  border-top:1px solid rgb(189,192,203);
+  width:90%;
+  margin:0 auto;
+}
+.evatitle1 {
+  font-size:16px;
+  width:40%;
+  line-height:24px;
+  height:24px;
+  background:#fff;
+  position:absolute;
+  top:-12px;
+  left:30%;
+}
+.tag {
+  font-size:4vw;
+  line-height:35px;
+  height:35px;
+  width:28%;
+  float:left;
+  text-align:center;
+  border:1px solid rgb(189,192,203);
+  border-radius:4px;
+  margin:5px 2%;
+}
+.taglist {
+  margin:30px auto;
+  width:86%;
+  overflow:hidden
+}
+.selected2 {
+  background:rgb(73,79,97);
+  color:#fff;
+}
+.selected1 {
+  background:rgb(255,117,0);
+  color:#fff;
+}
+.orderStatus-bottom {
+    background:#fff;
+    margin:10px auto;
+    position: relative;
+}
+.back {
+  position:fixed;
+  bottom:0;
+  height:57px;
+  line-height:57px;
+  color:rgb(119,124,139);
+  font-size:34rpx;
+  text-align:center;
+  width:100%;
+  border:1px solid #ececec;
+}
+.overtime {
+  color:#fff;
+  background:#000;
+  opacity:0.2;
+  width:60%;
+  margin:30px auto;
+  text-align:center;
+  font-size:16px;
+  line-height:40px;
+  height:40px;
+  border-radius:4px;
+}
+.offlinetext {
+  font-size:18px;
+  margin:30px auto;
+  text-align:center;
+  width:100%;
+}

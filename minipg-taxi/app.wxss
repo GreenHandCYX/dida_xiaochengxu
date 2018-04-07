@@ -1,0 +1,63 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+
+} 
+.map{
+    width: 100%;
+  height: 100vh;
+}
+.map map{
+    width: 100%;
+  height: 100%;
+}
+page {
+	background:#f5f5f7;
+}
+.route-start-icon{
+  width: 20rpx;
+   height: 20rpx; 
+}
+.route-end-icon{
+  width: 20rpx;
+   height: 20rpx; 
+}
+.orange{
+  color: rgb(255,117,0)
+}
+.orangeBtn{
+  width: 100%;
+   height: 114rpx;
+  background: rgb(255,117,0);
+  color:#fff;
+   line-height: 114rpx;
+   text-align: center;
+   font-size: 34rpx;
+}
+.garyBtn{
+width: 100%;
+ height: 114rpx;
+  background: #fff; 
+ color: rgb(119,124,139);
+ line-height: 114rpx;
+text-align: center;
+font-size: 34rpx;
+}
+.horizontally{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.vetically{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

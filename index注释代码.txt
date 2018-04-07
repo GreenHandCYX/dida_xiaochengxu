@@ -1,0 +1,168 @@
+  // onLoad: function (options) {   
+  //   const name = options.loc;
+  //   const flag = options.flag;
+  //   const details = options.details;
+  //   var that = this;
+  //   that.getLocation()
+  //   var timer = setInterval(function () {
+  //     if (that.data.lat) {
+  //       clearInterval(timer)
+  //       that.mapCtx = wx.createMapContext('map');
+  //       that.setData({
+  //         nowStart: wx.getStorageSync('nowStart') || '当前位置',
+  //         nowEnd: wx.getStorageSync('nowEnd') || '想要去哪儿？',
+  //         markers: [{
+  //           iconPath: "/img/iconMapStart.png",
+  //           id: 0,
+  //           latitude: that.data.lat,
+  //           longitude: that.data.lng,
+  //           width: 50,
+  //           height: 50
+  //         }]
+  //       })
+  //       that.getlocGps(name, flag, details);
+  //       //查看起始与终止是否有值
+  //       that.checkAll()
+  //     }
+  //   }, 20)
+  //   if (wx.getStorageSync('aboarding')){
+  //     wx.navigateTo({
+  //       url: '/pages/trip/trip?taxi_ride_id=' + wx.getStorageSync('taxi_ride_id'),
+  //     })
+  //   }
+  // },
+
+
+
+
+
+
+//已开通城市列表
+  //  getCityDistrictList(){
+  //    if(!wx.getStorageSync("havenCityList")){
+  //      wx.request({
+  //        url: app.globalData.domin + '/passengertaxi/getCityDistrictList',
+  //        data:{
+  //          user_cid:'42c5ee34-cff7-11e3-89a8-782bcb4cf8d8'
+  //        },
+  //        success:function(res){
+  //           var cityList = res.data.list.map(ele => {
+  //            return ele.province_name
+  //          })
+  //           cityList = Array.from(new Set(cityList))
+
+  //           var arr = cityList.map(ele => {
+  //             return {
+  //               "name": ele,
+  //               "key": "已开通城市"
+  //             }
+  //           })
+  //           wx.setStorageSync("havenCityList",JSON.stringify(arr))
+  //        }
+  //      })
+  //    }
+  //  }
+
+
+
+
+
+
+
+ //设置起始与终止点的信息
+  // getlocGps(name, flag, details) {
+  //   var that = this
+  //   if (!name && !wx.getStorageSync('nowStart')) {
+  //     this.getLocation((res) => {
+  //       //不存在则定位
+  //       name = res.data.result.sematic_description;
+  //         this.setData({
+  //           nowStart: '当前位置...'
+  //         })
+  //       setTimeout(function () {
+  //         that.setData({
+  //           nowStart: name,
+  //         })
+  //       }, 1000)
+  //       wx.setStorageSync("region", res.data.result.addressComponent.city)
+  //       wx.setStorageSync("nowStart", res.data.result.sematic_description)
+  //       //标识该起点信息为腾讯地图所得
+  //       details = res.data.result.addressComponent.city + res.data.result.addressComponent.district + ',' + res.data.result.location.lat + ',' + res.data.result.location.lng
+  //       wx.setStorageSync("startDetail", details)
+  //     })
+  //   };
+
+  //   if (details) {
+  //     var detailsTencent = utils.baidu_coordinate_qq(details.split(',')[1], details.split(',')[2])
+  //     if (detailsTencent) {
+  //       var arr = [details.split(',')[0], detailsTencent.lat, detailsTencent.lon];
+  //       details = arr.join(',')
+  //     }
+  //   }
+  //   if (flag == 1) {
+  //     that.setData({
+  //       nowStart: name,
+  //       nowEnd: wx.getStorageSync("nowEnd"),
+  //       lat: details.split(',')[1],
+  //       lng: details.split(',')[2],
+  //       markers: [{
+  //         iconPath: "/img/iconMapStart.png",
+  //         id: 0,
+  //         latitude: details.split(',')[1],
+  //         longitude: details.split(',')[2],
+  //         width: 50,
+  //         height: 50
+  //       }]
+  //     })
+  //     wx.setStorageSync("nowStart", name)
+  //     wx.setStorageSync('startDetail', details)
+  //   } else if (flag == 0) {
+  //     that.setData({
+  //       nowEnd: name,
+  //       nowStart: wx.getStorageSync("nowStart")
+  //     })
+  //     wx.setStorageSync("nowEnd", name)
+  //     wx.setStorageSync('endDetail', details)
+  //   }
+  // }, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+         // that.getNearByDrivers(res.data.result.location.lat, res.data.result.location.lng).then(resolve => {
+          //   var timeCha = that.DateCha(resolve.data.driver_eta)
+          //   var s = '最近司机约' + (timeCha.hours > 0 ? timeCha.hours + '小时' : '') + (timeCha.minutes > 0 ? timeCha.minutes + '分钟到达' : '1分钟内到达');
+          //   that.setData({
+          //     tooltip: null,
+          //     markersList: [{
+          //       iconPath: "/img/iconMapStart.png",
+          //       id: 0,
+          //       latitude: tencentLoc.lat,
+          //       longitude: tencentLoc.lon,
+          //       width: 30,
+          //       height: 30,
+          //       label: {
+          //         content: resolve.data.display_text || s,
+          //         color: '#333',
+          //         borderColor: '#ccc',
+          //         borderWidth: 1,
+          //         borderRadius: 14,
+          //         bgColor: '#fff',
+          //         padding: 4,
+          //         textAlign: 'center',
+          //         x: -55,
+          //         y: -55
+          //       }
+          //     }]
+          //   })
+
+          // })

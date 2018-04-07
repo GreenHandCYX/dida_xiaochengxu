@@ -1,0 +1,108 @@
+page{ background: #fff;}
+.pay{
+	width: 100%;
+  height: 100%;
+  overflow: hidden;
+	color: #848484;
+	font-size: 4.5vw;
+	text-align: left;
+  padding-top: 10px;
+  background: #fff;
+/*  display: none;*/
+}
+.line{
+	height: auto;
+	border-bottom: 1px solid rgb(229,229,229);
+  padding-left: 15px;
+}
+.colorstyle{color: rgb(255,117,0);}
+.paycont{
+  height: 65px;
+}
+.paytext{
+  margin-top: 15px;
+  color: rgb(73,79,97);
+}
+.paytime{
+  font-size: 3.5vw;
+  color: rgb(189,192,203);
+  margin-top: 2px;
+}
+.coupon{
+  height: 54px;
+  line-height: 54px;
+  color: #000;
+}
+.coupon-num{
+  color: rgb(157,163,180);
+  font-size: 3.9vw;
+}
+.right{
+  text-align: right;
+  height: 35px;
+  line-height: 35px;
+  margin-right: 15px;
+}
+.sum{
+  margin-top: 20px;
+  color: rgb(73,79,97);
+}
+.paymoney{
+  margin-top: 20px;
+  color: rgb(119,124,139);
+}
+.size{font-size: 5.3vw;}
+.size1{ font-size: 4vw;}
+.finalpay{
+  width: 100%;
+  position: fixed;
+  bottom:0px;
+  left: 0;
+  color: #fff;
+  text-align: center;
+}
+.coupon-use{
+  float: right;
+  margin: 0px 18px 0 0;
+}
+.pay-image{
+  width: 8px;
+  height: 13px;  
+}
+.no-use{
+  color: rgb(136,136,136);
+  margin: 0 10px 0 0;
+}
+.payIcon image{
+  display: flex;
+  width: 60px;
+  height: 60px;
+  margin:15% auto;
+}
+.payInfotext{
+  color: rgb(73,79,97);
+  font-size: 20px;
+  text-align: center;
+}
+.nopayInfotext{
+  width: 70%;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #999999;
+}
+.payBtn{
+  width: 70%;
+  margin:20px auto;
+  height: 40px;
+  background: rgb(255,117,0);
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 4px;
+  font-size: 15px;
+}
+.btnStyle{
+  border:1px solid rgb(255,117,0);
+  background:none;
+  color:rgb(255,117,0);
+}

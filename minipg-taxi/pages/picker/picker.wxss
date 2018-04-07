@@ -1,0 +1,137 @@
+/* pages/picker/picker.wxss */
+@import '../order/order.wxss';
+page{
+
+  font-family: 'PingFangSC-Regular';
+    color:rgb(73, 79, 97);
+}
+.selected{
+  position: absolute;
+  z-index: 3;
+  background: #fff;
+  height: 120rpx;
+  width: 100%;
+  border-bottom: 1px solid rgb(215, 217, 229);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  font-size: 34rpx;
+  color: rgb(73, 79, 97)
+}
+.PLsection{
+ flex: 1;
+
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+}
+.PLsection input{
+ width: 100%;
+     font-size: 34rpx;
+   text-overflow: ellipsis;
+  
+}
+
+.sug_info{
+  position: absolute;
+  top: 120rpx;
+  padding-left: 30rpx;
+  height: calc(100% - 120rpx);
+  overflow: hidden;
+  width: calc(100% - 30rpx);
+  z-index: 3;
+  background: #fff;
+font-size: 17px;
+}
+.sug_con{
+  height: 100%;
+}
+.sug_con view{
+  height: 120rpx;
+  line-height: 120rpx;
+
+  width: 100%;
+    box-sizing: border-box;
+  border-bottom: 1rpx solid rgb(215, 217, 229);
+  padding-left: 50rpx;
+  background: url('https://static.didapinche.com/pics//g/wxxcx/iconFixedPointGray.png') left center no-repeat;
+  background-size: 32rpx 42.6rpx;
+  display: flex;
+  flex-direction: column;
+ justify-content: center
+}
+.sug_con view text{
+  display: block;
+  height: 40%;
+  width:100%;
+  line-height: 48rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: rgb(73, 79, 97)
+}
+.sug_con.storageCon{
+   top: 12vh;
+}
+.sug_con.storageCon view{
+  background: url('https://static.didapinche.com/pics//g/wxxcx/iconLocationTime.png') left center no-repeat;
+  background-size: 34rpx 34rpx;
+   padding-left: 56rpx;
+}
+.citypicker{
+height: 120rpx;
+  line-height:  120rpx;
+  padding-left: 30rpx;
+  font-size: 34rpx;
+  z-index: 4;
+}
+.line::before{
+content: '';
+position: absolute;
+top:50%;
+left:-40rpx;
+transform: translateY(-50%);
+width: 30rpx;
+height: 17rpx;
+background:url('http://img.didapinche.com/pics//g/wxxcx/iconTriangleUpHighlight01.png') center no-repeat;
+background-size: contain;
+}
+.line{
+  position: relative;
+  height: 40rpx;
+  width: 1px;
+  margin: 0 24rpx 0 57rpx;
+  background-color: rgb(215,217, 229)
+}
+.tip{
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%)
+}
+.clearStorage{
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+   left: 50%;
+  transform: translateX(-50%);
+  color:#ccc;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background-color: #fff;
+  z-index: 6;
+}
+.clearStorage::after{
+  content: '';
+  display: none;
+}
+.longAddress{
+  color:rgb(157,163,180)!important;
+  font-size: 26rpx;
+
+}
+.selectedCity{
+  font-size: 34rpx;
+}

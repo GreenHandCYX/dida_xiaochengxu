@@ -1,0 +1,285 @@
+[33mcommit 3d7927c20cf702b45cf34218d5c6f6aa7c786418[m
+Merge: 29693f7 ed29c52
+Author: liyou <liyou@didapinche.com>
+Date:   Wed Jan 31 13:53:14 2018 +0800
+
+    Merge branch 'develop' of ssh://gitlab.didapinche.com:9122/server/minipg-taxi into develop
+
+[33mcommit 29693f7cdbf49494194566df1a19d91e4dfc7653[m
+Author: liyou <liyou@didapinche.com>
+Date:   Wed Jan 31 13:53:08 2018 +0800
+
+    change confilic
+
+[33mcommit ed29c523ae1a369e84663d57da9388c1a78ed6ef[m
+Author: Li Ting Ting <litingting@didapinche.com>
+Date:   Wed Jan 31 13:50:02 2018 +0800
+
+    change mycoupon
+
+[33mcommit 7e4b66c66963547fcf5d1257a4fe4a0ed7e26327[m
+Author: Li Ting Ting <litingting@didapinche.com>
+Date:   Wed Jan 31 13:46:52 2018 +0800
+
+    change pay
+
+[33mcommit d20b6ac0f2660bb8a457c963057a0f63dff0f94a[m
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 13:45:22 2018 +0800
+
+    success修改
+
+[33mcommit d741189a03d3e64beaa1083d1711b4c92348118d[m
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 13:43:28 2018 +0800
+
+    success修改
+
+[33mcommit 8322992c7702040b0085909da75625f5600a3d29[m
+Merge: c41eb9c 3e565af
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 13:41:46 2018 +0800
+
+    Merge branch 'develop' of ssh://gitlab.didapinche.com:9122/server/minipg-taxi into develop
+
+[33mcommit c41eb9ce7d1c357f9a73ea13c02493665e49708e[m
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 13:41:43 2018 +0800
+
+    支付输入框修改
+
+[33mcommit 3e565aff77a8c673199487344f1a6bcbbf8e331f[m
+Merge: 63a56ef a847400
+Author: liyou <liyou@didapinche.com>
+Date:   Wed Jan 31 13:24:24 2018 +0800
+
+    change confilic
+
+[33mcommit 63a56ef6a79eb98485e246f6d2363a859245eca6[m
+Author: liyou <liyou@didapinche.com>
+Date:   Wed Jan 31 13:19:23 2018 +0800
+
+    remove item
+
+[33mcommit a847400d31aea76dd8f13b73009980357caa1697[m
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 13:11:00 2018 +0800
+
+    手机登录左右滑动修改
+
+[33mcommit 25e693e135c2d1379e7094c303c4f9e21530f604[m
+Merge: 77d13f4 4d255f4
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 11:58:40 2018 +0800
+
+    Merge branch 'develop' of ssh://gitlab.didapinche.com:9122/server/minipg-taxi into develop
+
+[33mcommit 77d13f410d2f1116a510c13e34a0c337881c555e[m
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 11:58:38 2018 +0800
+
+    钱包金额修改
+
+[33mcommit 4d255f41ab47ccc7eb7830b7578c8c3a32587ae4[m
+Author: Li Ting Ting <litingting@didapinche.com>
+Date:   Wed Jan 31 11:58:21 2018 +0800
+
+    change pay
+
+[33mcommit 0a4d4023c924174a05a2d12a258360c4db719fd4[m
+Merge: c599a46 1f77936
+Author: chaiyixin <chaiyixin@didapinche.com>
+Date:   Wed Jan 31 11:57:57 2018 +0800
+
+    Merge branch 'develop' of ssh://gitlab.didapinche.com:9122/server/minipg-taxi into develop
+
+[33mcommit c599a46eafe37cb8058d22f551a570870a72d738[m
+Author: chaiyixin <chaiyixin@didapinche.com>
+Date:   Wed Jan 31 11:57:52 2018 +0800
+
+    fixed
+
+[33mcommit 1f779362cdf767ee764427557839c3db646a65e4[m
+Author: Li Ting Ting <litingting@didapinche.com>
+Date:   Wed Jan 31 11:53:51 2018 +0800
+
+    change pay
+
+[33mcommit 61419f3f7b19c09082b455fc1108081e21361af7[m
+Merge: ad2da6a 8a8fd5b
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 11:49:54 2018 +0800
+
+    Merge branch 'develop' of ssh://gitlab.didapinche.com:9122/server/minipg-taxi into develop
+
+[33mcommit ad2da6ae009034135cf4568576ae0eae32139896[m
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 11:49:50 2018 +0800
+
+    钱包金额修改
+
+[33mcommit 8a8fd5b619659f8e7df93836884a36690c56de7b[m
+Author: Li Ting Ting <litingting@didapinche.com>
+Date:   Wed Jan 31 11:43:44 2018 +0800
+
+    change pay
+
+[33mcommit 5c738863fabd763bd18c60b631f1e0f62aa28da0[m
+Author: Li Ting Ting <litingting@didapinche.com>
+Date:   Wed Jan 31 11:36:24 2018 +0800
+
+    change pay
+
+[33mcommit 928d15afee87aada15c15ebdc3aa4a1ff23cf9f8[m
+Merge: e3bbfb5 3beb3c2
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 11:34:32 2018 +0800
+
+    Merge branch 'develop' of ssh://gitlab.didapinche.com:9122/server/minipg-taxi into develop
+
+[33mcommit e3bbfb5823ef89ef995a0b3d3756729bd99d002d[m
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 11:34:26 2018 +0800
+
+    叫车页面修改
+
+[33mcommit 3beb3c23788b4167a4fcf8780e7582ceebac7cf6[m
+Author: Li Ting Ting <litingting@didapinche.com>
+Date:   Wed Jan 31 11:34:19 2018 +0800
+
+    change pay
+
+[33mcommit cc95c370060a25fde765a59aa57f8a6831b79648[m
+Author: Li Ting Ting <litingting@didapinche.com>
+Date:   Wed Jan 31 11:17:24 2018 +0800
+
+    change pay
+
+[33mcommit 7b66e523b40374c24b279f96a86b72225ecff091[m
+Merge: d4c9aa0 337c557
+Author: chaiyixin <chaiyixin@didapinche.com>
+Date:   Wed Jan 31 11:10:43 2018 +0800
+
+    Merge branch 'develop' of ssh://gitlab.didapinche.com:9122/server/minipg-taxi into develop
+
+[33mcommit d4c9aa06b903eeea87279121ab9c68d27bf51e9d[m
+Author: chaiyixin <chaiyixin@didapinche.com>
+Date:   Wed Jan 31 11:10:34 2018 +0800
+
+    fixed
+
+[33mcommit 337c5572d875db3a54684cc16c3a5ed100f92739[m
+Merge: 9ff7b45 4010ce8
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 11:02:10 2018 +0800
+
+    Merge branch 'develop' of ssh://gitlab.didapinche.com:9122/server/minipg-taxi into develop
+
+[33mcommit 9ff7b45846eded4c6565d2da378ff22f35d56854[m
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 11:02:07 2018 +0800
+
+    css 修改
+
+[33mcommit 4010ce8c682a2df57c996ad4c6dcbbdde2f7f2ec[m
+Author: Li Ting Ting <litingting@didapinche.com>
+Date:   Wed Jan 31 11:02:04 2018 +0800
+
+    change pay
+
+[33mcommit 4a00f666cbac6cfe8e57721bd00f4f649a4378c4[m
+Author: Li Ting Ting <litingting@didapinche.com>
+Date:   Wed Jan 31 10:54:17 2018 +0800
+
+    change pay
+
+[33mcommit 100b6bd42c9d075565b34649a502c88cee15e380[m
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 10:48:52 2018 +0800
+
+    支付 修改
+
+[33mcommit f11cda4b0f26187c8d193780477221760bc35166[m
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 10:42:27 2018 +0800
+
+    验证码 修改
+
+[33mcommit 5ce52e4f41544153904cc4eae9c1d7c40f3e2518[m
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 10:40:24 2018 +0800
+
+    冲突 修改
+
+[33mcommit b333c4709bd1597696d8cde617b64596b99f8845[m
+Merge: ceda457 f7a1a65
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 10:38:29 2018 +0800
+
+    冲突 修改
+
+[33mcommit f7a1a6553f3151b37a742815e7e8ed3f31a4bc66[m
+Author: Li Ting Ting <litingting@didapinche.com>
+Date:   Wed Jan 31 10:08:11 2018 +0800
+
+    change pay
+
+[33mcommit ceda4579507cd47600fbf114e747d11f77e90c51[m
+Author: bibi <cokibibi@163.com>
+Date:   Wed Jan 31 09:44:10 2018 +0800
+
+    支付输入 修改
+
+[33mcommit e04f05e6a2e35303040575bf71e8a981931e3e69[m
+Merge: 9b321f9 a2669a5
+Author: chaiyixin <chaiyixin@didapinche.com>
+Date:   Tue Jan 30 21:04:56 2018 +0800
+
+    Merge branch 'develop' of ssh://gitlab.didapinche.com:9122/server/minipg-taxi into develop
+
+[33mcommit 9b321f976ff26bc5f913345b5cc63e0c6c865b55[m
+Author: chaiyixin <chaiyixin@didapinche.com>
+Date:   Tue Jan 30 21:04:49 2018 +0800
+
+    fixed
+
+[33mcommit a2669a57625af1b913f10244f4543cea95a392a1[m
+Author: Li Ting Ting <litingting@didapinche.com>
+Date:   Tue Jan 30 20:16:39 2018 +0800
+
+    change pay
+
+[33mcommit 304fbc56cce7afe4d4b968fd84775b2ecaaf9ea9[m
+Merge: 9e77830 c22ed07
+Author: Li Ting Ting <litingting@didapinche.com>
+Date:   Tue Jan 30 20:04:42 2018 +0800
+
+    Merge branch 'develop' of ssh://gitlab.didapinche.com:9122/server/minipg-taxi into develop
+
+[33mcommit 9e77830c0b508b269f05e5b6c6e379c26775a0d5[m
+Author: Li Ting Ting <litingting@didapinche.com>
+Date:   Tue Jan 30 20:04:32 2018 +0800
+
+    change pay
+
+[33mcommit c22ed071874188e3ec7c9119bb6ff8c3341aa346[m
+Merge: f0cc7eb 6b5cb98
+Author: chaiyixin <chaiyixin@didapinche.com>
+Date:   Tue Jan 30 20:04:14 2018 +0800
+
+    Merge branch 'develop' of ssh://gitlab.didapinche.com:9122/server/minipg-taxi into develop
+
+[33mcommit f0cc7eb4324f84e9e1d8d5425f15a44bd82a8cb9[m
+Author: chaiyixin <chaiyixin@didapinche.com>
+Date:   Tue Jan 30 20:04:11 2018 +0800
+
+    fixed
+
+[33mcommit 6b5cb98a8e1dd0b2f4cb9ef4773d5b735fa2fbb8[m
+Author: bibi <cokibibi@163.com>
+Date:   Tue Jan 30 19:33:40 2018 +0800
+
+    支付 修改
+
+[33mcommit e0686ef38bc99086460907016c4b46a6cfba0244[m
+Author: bibi <cokibibi@163.com>

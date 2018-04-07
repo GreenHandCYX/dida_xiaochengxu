@@ -1,0 +1,297 @@
+<!--pages/order/order.wxml-->
+
+
+<!------------------------------------------地图专用模块--------------------------------------------------------------------------------->
+<!--地图顶部选地址模版  （起始点，叫车倒计时）-->
+<template name="orderAddress-top">
+  <cover-view class="orderAddress-top" hidden="{{!showRouteTop}}">
+    <cover-view class='route-start' hidden="{{!showOrderAddress}}">
+      <cover-view class='aaa'></cover-view>
+      <cover-image src='https://static.didapinche.com/pics//g/wxxcx/iconStart.png' class='route-start-icon bbb'></cover-image>
+      <cover-view bindtap="bindKeyInputStart" class='ccc'>{{nowStart}}</cover-view>
+    </cover-view>
+    <cover-view class="line"></cover-view>
+    <cover-view class='route-start' hidden="{{!showOrderAddress}}">
+      <cover-view class='aaa'></cover-view>
+      <cover-image src='https://static.didapinche.com/pics//g/wxxcx/iconEnd.png' class='route-end-icon bbb'></cover-image>
+      <cover-view bindtap="bindKeyInputEnd" class="{{nowEnd=='想要去哪儿？'?'gray ccc':'ccc'}}">{{nowEnd}}</cover-view>
+    </cover-view>
+    <cover-view class='route-countdown' hidden='{{!hasCallStart}}'>
+      <cover-view class='orange route-countdown-num secNum' style="{{countdownEnd?'width:120rpx':'width:170rpx'}}">{{downTimeAll}}</cover-view>
+      <cover-view class='route-countdown-num secNumText'>{{orderAddress_top_secNumText}}
+      </cover-view>
+    </cover-view>
+  </cover-view>
+</template>
+
+
+<!--地图顶部行程状态模版 （剩余支付时间，预计到达时间 ）-->
+<template name="orderStatus-top">
+  <cover-view class="orderStatus-top" hidden="{{!showAboardTop}}">
+    <cover-view class="orderStatus-top-text">{{orderStatus_top_secNumText}}</cover-view>
+    <cover-view class="orderStatus-paytime" hidden="{{!showpayTime}}">剩余支付时间
+      <cover-view class="orderStatus-paytime-num orange">{{paytimeAll}}
+        <cover-view class='orderStatus-paytime-num'></cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class="orderStatus-paytime orderStatus-top-time" hidden="{{!showarrivedTime}}">预计
+      <cover-view class="orderStatus-paytime-num orange">{{estimatedTime.hour}}</cover-view>
+      <cover-view class="orderStatus-paytime-num">:</cover-view>
+      <cover-view class="orderStatus-paytime-num orange">{{estimatedTime.min}}</cover-view>
+      <cover-view class="orderStatus-paytime-num">到达</cover-view>
+    </cover-view>
+  </cover-view>
+</template>
+
+
+<!--地图底部行程状态模版（司机信息，司机收款，用户支付按钮）  -->
+<template name="orderStatus-bottom">
+  <cover-view class='orderStatus-bottom' hidden="{{!showDiverInfo}}">
+    <cover-view class='orderInfo-top'>
+      <cover-image src="{{driverImg?diverImg:'https://static.didapinche.com/pics//g/wxxcx/taxiMan.png'}}" class='driverImg-top'></cover-image>
+      <cover-view class='driverName-top'>{{diverName}}</cover-view>
+      <cover-view class='driverCar-top2 vertical-middle'>  <cover-view class='vertical-middle'></cover-view> {{diverCar}}  <cover-view class='vertical-middle'></cover-view></cover-view>
+      <cover-view class='driverCompany-top'>{{diverCompany}}</cover-view>
+      <cover-image src='https://static.didapinche.com/pics//g/wxxcx/icon_telephone.png' class='call-top' bindtap='callToDriver'></cover-image>
+    </cover-view>
+    <cover-view class='orderStatus-bottom-payinfo' wx:if="{{diverSentPay}}">
+      <cover-view class="orderStatus-bottom-payinfo-main top-border-grey">
+        <cover-view class="align-center">
+          <cover-view style="line-height:70rpx">
+            <cover-view class="inline-block orderStatus-bottom-payinfo-base vertical-bottom">司机收款</cover-view>
+            <cover-view class="inline-block orderStatus-bottom-payinfo-base-num vertical-bottom">{{payinfoBaseNum}}
+             <cover-view class='vertical-middle'></cover-view>
+            </cover-view>
+            <cover-view class="inline-block orderStatus-bottom-payinfo-base vertical-bottom">元</cover-view>
+          </cover-view>
+        </cover-view>
+        <cover-view class="align-center" hidden="{{!payinfoAdd}}">
+          <cover-view class="payinfo-extfee">
+            <cover-view class="inline-block color25512263 vertical-bottom">+{{payinfoAdd}}
+            </cover-view>
+            <cover-view class="inline-block vertical-bottom ">元调度费</cover-view>
+          </cover-view>
+        </cover-view>
+      </cover-view>
+      <cover-view class='orderBtn  orangeBtn' bindtap='payOrder' hidden="{{!diverSentPay}}">
+        去支付（合计{{payAll}}元）
+      </cover-view>
+    </cover-view>
+    <!-- <cover-view class="garyBtn"></cover-view> -->
+     <cover-view class="garyBtn" hidden="{{diverSentPay}}"></cover-view> 
+    <cover-view class='orderBtn  garyBtn orderBtn-bottom' bindtap='ActivePayOrder' hidden="{{!showActivePay}}">支付车费</cover-view>
+  </cover-view>
+</template>
+
+
+
+
+
+
+<!--地图底部价格详情  （预估价格）-->
+<template name='routePrice'>
+  <cover-view class='route-price vertical-align' wx:if='{{hasPrice}}'>
+    <cover-view class='vertical-ref vertical-price '></cover-view>
+    <cover-view class='vertical-middle route-price-tip'>
+      <!-- <cover-view class='vertical-middle'>以</cover-view> -->
+      <cover-view class='vertical-middle'>以打表价格为准</cover-view>
+      <!-- <cover-view class='vertical-middle'>为准</cover-view> -->
+    </cover-view>
+    <cover-view class='vertical-middle route-price-num'>
+      <cover-view class='vertical-middle'>预估 </cover-view>
+      <cover-view class='vertical-middle' decode="{{true}}">{{deduct_price}}
+        <cover-view class='vertical-middle'></cover-view>
+      </cover-view>
+      <cover-view class='vertical-middle'> 元</cover-view>
+    </cover-view>
+    <cover-view class='vertical-middle route-price-coupon' wx:if='{{coupon_price}}'>
+      <cover-view class='vertical-middle '>券已抵 </cover-view>
+      <cover-view class='vertical-middle orange'>{{coupon_price}}</cover-view>
+      <cover-view class='vertical-middle '> 元</cover-view>
+    </cover-view>
+  </cover-view>
+</template>
+
+<!--地图底部呼出取消订单选择框（取消订单选择列表）  -->
+<template name='CancelBox'>
+  <cover-view class="CancelBox" hidden="{{!showCancelBox}}">
+    <!-- <cover-view class="CancelBox-btn">取消行程</cover-view> -->
+    <cover-view class='CancelBox-line'></cover-view>
+    <cover-view class="CancelBox-btn CancelBox-tips {{replied?'CancelBox-tips2':'CancelBox-tips3'}}">
+              <cover-view wx:if="{{!replied}}" class='CancelBox-tips3'>司机正在抢单中，再等一会吧</cover-view>
+            <cover-view wx:if="{{replied}}" class='CancelBox-tips2'>现在取消为你的责任，当日取消超过3次</cover-view>
+      <cover-view wx:if="{{replied}}" class='CancelBox-tips4'>将会被静默发单。你确认要取消？</cover-view>
+    </cover-view>
+    <cover-view class='CancelBox-line'></cover-view>
+    <cover-view class='CancelBox-line'></cover-view>
+    <cover-view class="CancelBox-btn" bindtap='cancelTaxiRide'>取消行程</cover-view>
+    <cover-view class='CancelBox-line'></cover-view>
+        <cover-view class="orange CancelBox-btn" bindtap='closeCancelBox'>继续等待</cover-view>
+  </cover-view>
+</template>
+
+
+<!--地图底部调度费模块  -->
+<template name="dispatch">
+  <cover-view class="dispatch" hidden="{{!showdispatchAll}}">
+    <cover-image src='https://static.didapinche.com/pics//g/wxxcx/dispatch.png' class="dispatchBtn" bindtap='openDispatch' hidden="{{showdispatchBtn && extra_feeNum}}"></cover-image>
+    <cover-view class="dispatchBtn2" hidden="{{!extra_feeNum}}" bindtap='openDispatch'>
+      <cover-image src='https://static.didapinche.com/pics//g/wxxcx/dispatch2.png'></cover-image>
+      <cover-view>+{{extra_feeNum}}元</cover-view>
+    </cover-view>
+  </cover-view>
+  <!--调度费选择  -->
+   <cover-view hidden="{{!showDispatch}}" class="dispatchBox">
+      <cover-view class="dispatchBox-line"></cover-view>
+      <cover-view class="dispatchBox-title">
+        <cover-view>调度费</cover-view>
+        <cover-view bindtap='closedispatchBtn'>确定</cover-view>
+        <cover-view bindtap='removedispatch'>清空</cover-view>
+      </cover-view>
+      <cover-view class="dispatchBox-line"></cover-view>
+      <cover-view class="dispatchBox-num vertical-align">
+        <cover-view class='vertical-ref '></cover-view>
+        <cover-view bindtap='selectDispatch' data-extra="5" class="{{extra_fee== 5?'vertical-middle dispatchBox-num-select':'vertical-middle'}}">5元</cover-view>
+        <cover-view bindtap='selectDispatch' data-extra="10" class="{{extra_fee== 10?'vertical-middle dispatchBox-num-select':'vertical-middle'}}">10元</cover-view>
+        <cover-view bindtap='selectDispatch' data-extra="20" class='vertical-middle' class="{{extra_fee== 20?'vertical-middle dispatchBox-num-select':'vertical-middle'}}">20元</cover-view>
+      </cover-view>
+    </cover-view>
+</template>
+
+
+
+<!--地图底部按钮模版（呼叫出租车，取消行程）  -->
+<template name="orderBtn-bottom">
+  <cover-view class="orderBtn-bottom orangeBtn" bindtap='callDidaTaxi' hidden='{{!showCallBtn}}'>
+    呼叫出租车
+  </cover-view>
+  <cover-view class="orderBtn orderBtn-bottom garyBtn" bindtap='popcancelBox' hidden='{{!showCancleBtn}}' >
+    取消行程
+  </cover-view>
+</template>
+<!------------------------------------------普通模块--------------------------------------------------------------------------------->
+
+<!--地图支付弹框  -->
+<template name='payWindow'>
+  <view class='payWindow'>
+    <view class="payWindow-top vetically">
+      <view class="align-center">
+        <text class="inline-block vertical-middle">车费</text>
+        <input placeholder='车费金额' type="digit" class="payWindow-input inline-block vertical-middle" maxlength="6" bindinput='moneyChange' bindblur="inpBlur" ></input>
+        <text class="inline-block vertical-middle">元</text>
+      </view>
+      <view class="align-center payWindow-extfee" wx:if="{{payinfoAdd}}">需支付
+        <text class="color25512263">{{payinfoAdd}}</text> 元调度费</view>
+    </view>
+    <view class="payWindow-border">
+      <view class="inline-block btn-cancle" bindtap='cancelActivePayOrder'>取消</view>
+      <view class="orangeBtn inline-block btn-next" bindtap='payOrder'>去支付(合计{{payAll}}元)</view>
+    </view>
+  </view>
+</template>
+
+
+
+<!--司机信息模版  -->
+<template name="orderStatus-pay-top">
+  <view class='orderInfo-top' hidden="{{!showDiverInfo}}">
+    <image src="{{driverImg?diverImg:'https://static.didapinche.com/pics//g/wxxcx/taxiMan.png'}}" class='driverImg-top'></image>
+    <view class='driverName-top'>{{diverName}}</view>
+    <view class='driverCar-top'>{{diverCar}}</view>
+    <view class='driverCompany-top'>{{diverCompany}}</view>
+    <image src='https://static.didapinche.com/pics//g/wxxcx/icon_telephone.png' class='call-top' bindtap='callToDriver'></image>
+  </view>
+</template>
+
+
+<!--城市选择模版  -->
+<template name='city'>
+  <view class='pickerTool'>
+    <scroll-view scroll-y="true" class="searchLetter">
+      <view wx:for="{{cityList}}" style="height:{{ winHeight*1.1 / cityList.length}}px" wx:key="index" data-letter="{{item.initial}}" class='{{showLetter==item.initial?"active":""}}' catchtap='selectLetter'>
+        {{item.initial}}
+      </view>
+    </scroll-view>
+    <scroll-view class='searchArea' scroll-y="true" style="height:{{winHeight}}px" bindscroll="bindScroll" scroll-into-view="{{showLetter}}">
+      <view class="selection" wx:for="{{cityList}}" wx:key="{{item.initial}}" id="{{item.initial}}">
+        <view class="item_letter">{{item.initial}}</view>
+        <view class="item_city" wx:for="{{item.cityInfo}}" wx:for-item="ct" wx:key="{{ct.id}}" wx:for-index="idx" data-text="{{ct.city}}" bindtap="selectCity">
+          {{ct.city}}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</template>
+
+
+
+
+<!--行程列表模块  -->
+<template name="TaxiRideList">
+  <view class="TaxiRideList" wx:for="{{TaxiRideList}}" wx:key="{{item}}" bindtap='checkRouteDetail' data-status="{{item.status}}" data-rideId="{{item.taxi_ride_id}}" data-review="{{item.review_closed}}">
+    <view class="route-item1">
+      <image src="{{item.driver_info.nick_name?'https://static.didapinche.com/pics//g/wxxcx/taxiMan.png':'https://static.didapinche.com/pics//g/wxcx/nodriver.png'}}"></image>
+      <view class="route-item1-info">
+        <text class="route-date">{{foo.dateFmtPath.dateFmtPath(item.plan_start_time)}}</text>
+        <view>
+          <text class="route-name">{{item.driver_info.nick_name?item.driver_info.nick_name:'匹配车主中...'}}</text>
+          <!-- <image  class="route-sex" src='https://static.didapinche.com/pics//g/wxxcx/noUserImg.png'></image> -->
+        </view>
+      </view>
+    </view>
+    <view class="route-item2">
+      <view>
+        <view class="route-start">
+          <image src='https://static.didapinche.com/pics//g/wxxcx/iconStart.png'></image>
+          <text>{{item.from_poi.short_address}}</text>
+        </view>
+        <view class="route-end">
+          <image src='https://static.didapinche.com/pics//g/wxxcx/iconEnd.png'></image>
+          <text>{{item.to_poi.short_address}}</text>
+        </view>
+      </view>
+      <text class="route-status">{{foo.changeStatus(item.status,item.review_closed)}}</text>
+    </view>
+    <view class="route-item3" wx:if="{{item.driver_info.car_no}}">
+      <text>出租车［{{item.driver_info.car_no}}］ </text>
+    </view>
+     <wxs module="foo">
+        var dateFmtPath = require('../../utils/dateFmtPath.wxs');
+        var changeStatus = function(status, closed) {
+          console.log(status)
+          var statusText = ''
+          switch (status) {
+            case 1:
+              statusText = "等待接单"
+              break;
+            case 2:
+            case 3:
+              statusText = "等待接驾"
+              break;
+            case 4:
+              statusText = "行程中"
+              break;
+            case 5:
+              statusText = "待支付"
+              break;
+            case 6:
+            case 7:
+              if (closed) {
+                statusText = "已完成"
+              } else {
+                statusText = "待评价"
+              }
+              break;
+            case 8:
+              statusText = "已取消"
+              break;
+          }
+          return statusText;
+        }
+        module.exports = {
+          dateFmtPath: dateFmtPath,
+          changeStatus: changeStatus
+        }
+      </wxs>
+  </view>
+</template>

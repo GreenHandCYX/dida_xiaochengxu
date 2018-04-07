@@ -1,0 +1,5 @@
+ <import src="../order/order.wxml"/>
+
+<template is="orderStatus-pay-top" data="{{showDiverInfo,diverName,diverCar,diverCompany,diverImg}}"/>  
+<view class="text"><view class="text1">订单已取消</view><view class="text2"><text>{{time}}</text><text>{{type}}</text></view></view>
+<view class="back" bindtap="back">回到首页</view>

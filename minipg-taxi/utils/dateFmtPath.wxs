@@ -1,0 +1,73 @@
+/**
+ * '20180127172709'日期字符串转Date对象
+ * @param DateStr  '20180127172709'日期字符串
+ * @returns Date对象
+ */
+function dateStrToDate(dateStr) {
+  if (dateStr.length !== 14) {
+    return null;
+  }
+  var fmtStr = dateStr.slice(0, 4) + "/" + dateStr.slice(4, 6) + "/" + dateStr.slice(6, 8) + " " + dateStr.slice(8, 10) + ":" + dateStr.slice(10, 12) + ":" + dateStr.slice(12, 14);
+  return getDate(fmtStr)
+}
+
+/**
+ * 格式化时间(今天,明天,昨天,年月)
+ * @param dateStr
+ */
+function dateFmtPath(dateStr) {
+  var date = dateStrToDate(dateStr);
+  if (date === null || date === undefined || date === "") {
+    return "";
+  }
+  var DateObj = date;
+
+  var MONTH = DateObj.getMonth();
+  if (MONTH !== MONTH) {
+    return "";
+  }
+  var weekArr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+  var o = {
+    'y+': DateObj.getFullYear(),  //年
+    "M+": MONTH + 1,              //月
+    "d+": DateObj.getDate(),   //日
+    "h+": DateObj.getHours(),     //小时
+    "m+": DateObj.getMinutes(),   //分
+    "w+": weekArr[DateObj.getDay()],     //星期
+  };
+  // 获取当前日期
+  var fmt = 'MM月dd日(ww) hh:mm';
+  var fmtObj = {
+    '-1': '昨天(ww) hh:mm',
+    '0': '今天(ww) hh:mm',
+    '1': '明天(ww) hh:mm'
+  }
+  var nowDate = getDate();
+  var dayDis = 999;
+  if (DateObj.getFullYear() === nowDate.getFullYear() && DateObj.getMonth() === nowDate.getMonth()) {
+    dayDis = DateObj.getDate() - nowDate.getDate()
+    if (fmtObj[''+dayDis]) {
+      fmt = fmtObj[''+dayDis]
+    }
+  }
+  var keysArr = ['y+', "M+", "d+", "h+", "m+", "w+"];
+
+  for (var i = 0; i < keysArr.length; i++) {
+    var k = keysArr[i];
+    var a = fmt.match(getRegExp("(" + k + ")"));
+    if (a) {
+      fmt = fmt.replace(a[1], function (a0, a1) {
+        if (("" + o[k]).length < 2) {
+          return (("00" + o[k]).slice(("" + o[k]).length))
+        }
+        return o[k]
+      });
+    }
+  }
+
+  return fmt;
+}
+
+module.exports = {
+  dateFmtPath: dateFmtPath
+}

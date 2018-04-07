@@ -1,0 +1,28 @@
+<!--pages/myHome/myHome.wxml-->
+<view class='content'>
+  <view class='userInfo'>
+  <!-- <image src='https://static.didapinche.com/pics//g/wxxcx/noUserImg.png'></image>
+   <image src='http://192.168.1.192:9022/imgs/Avatar/s//20160602/574f9569c474e.jpg'></image>  -->
+  
+     <image src="{{avatarUrl?avatarUrl:'https://static.didapinche.com/pics//g/wxxcx/noUserImg.png'}}"></image> 
+    <text class='userName'>{{userPhone}}</text>
+    <text class="score">{{average_score}}分</text>
+  </view>
+  <view class='functonal'>
+    <view bindtap='gotoRoute'>
+      <text>我的行程</text>
+      <image src='https://static.didapinche.com/pics//g/wxxcx/arrow.png'></image>
+    </view>
+    <view bindtap='gotoMoney'>
+      <text>我的钱包</text>
+      <image src='https://static.didapinche.com/pics//g/wxxcx/arrow.png'></image>
+    </view>
+    <view bindtap='gotoCoupon'>
+      <text>我的优惠券</text>
+      <image src='https://static.didapinche.com/pics//g/wxxcx/arrow.png'></image>
+    </view>
+  </view>
+  <view>
+    <view class='signout' bindtap='signout'>{{signoutText}}</view>
+  </view>
+</view>

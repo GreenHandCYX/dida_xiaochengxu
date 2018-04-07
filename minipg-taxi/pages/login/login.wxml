@@ -1,0 +1,15 @@
+<view class='content'>
+  <view class='title'>
+    <image src='https://static.didapinche.com/pics//g/wxxcx/loginPost.png'></image>
+  </view>
+  <button class='getPN Obtn' open-type="getPhoneNumber" bindgetphonenumber="loginByPhone" bindtap='getSession'> 微信用户快速登录</button>
+  <button bindtap='gotoPhoneLogin' class='getPL'>手机号验证登录</button>
+  <view class='foot'>
+    <text>该服务由嘀嗒出行提供</text>
+    <view>
+      登录即表示同意
+      <text bindtap='toAgreement'>《用户协议》</text>和
+      <text bindtap='toTreaty'>《隐私条约》</text>
+    </view>
+  </view>
+</view>

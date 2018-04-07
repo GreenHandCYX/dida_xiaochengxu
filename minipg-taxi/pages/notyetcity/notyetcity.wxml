@@ -1,0 +1,2 @@
+<!--pages/notyetcity/notyetcity.wxml-->
+<web-view src="{{url}}"></web-view>

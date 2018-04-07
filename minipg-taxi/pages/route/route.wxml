@@ -1,0 +1,18 @@
+<!--pages/route/route.wxml-->
+ <import src="../order/order.wxml"/>
+<view class="{{showNoList?'route fff':'route'}}">
+ <scroll-view scroll-y="{{canIscroll}}" class='TaxiRideList1' bindscrolltolower="loadMore">
+  <template is="TaxiRideList" data="{{TaxiRideList,checkRouteDetail}}"></template>
+ </scroll-view>
+ 
+  <view class='noroute' wx:if="{{showNoList}}">
+    <image src='https://static.didapinche.com/pics//g/wxxcx/noroute.png'></image>
+    <view class="noroutetext">暂无已完成订单</view>
+  </view>
+</view>
+
+
+
+
+
+

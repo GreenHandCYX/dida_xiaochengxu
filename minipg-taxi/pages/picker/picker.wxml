@@ -1,0 +1,36 @@
+
+<view class='selected' >
+  <view class='citypicker' bindtap='showCityPicker'>
+
+    <view class='selectedCity' >{{selectedCity}}</view>
+  </view>
+  <view class='line'></view>
+  <view class="PLsection">
+    <input focus="{{false}}" placeholder="{{flag==1?'从哪儿出发':'想要去哪儿'}}" auto-focus type="text" bindinput="bindKeyInput" placeholder-style="color: rgb(189,192,203)"/>
+  </view>
+</view>
+<!-- <import src="../order/order.wxml" />
+<template is="city" data="{{cityList,region,winHeight,showLetter}}" wx:if="{{isShowCityPicker}}" /> -->
+
+<view class="sug_info">
+<!-- <scroll-view class='storageCon sug_con' scroll-y wx:if="{{hasStorage}}">
+    <view wx:for="{{sugStorageList}}" bindtap='selectLoc' wx:key='{{index}}' data-item='{{item.long_address  +","+ item.location.lat  +","+item.location.lng }}' data-name='{{item.name}}'>{{item.name}}</view>
+  </scroll-view> -->
+
+  <scroll-view class='sug_con' wx:if="{{!hasStorage}}" scroll-y>
+    <view wx:for="{{sugList}}" bindtap='selectLoc' wx:key='{{index}}'  data-item='{{(item.address?item.address:item.name)  +","+ item.location.lat  +","+item.location.lng }}' data-name='{{item.name}}'>
+    <text>{{item.name}}</text>
+    <text class='longAddress'>{{item.address?item.address:item.name}}</text>
+    </view>
+  </scroll-view>
+    <scroll-view class='storageCon sug_con' scroll-y wx:else>
+     <view wx:for="{{sugStorageList}}" bindtap='selectLoc' wx:key='{{index}}'  data-item='{{item.long_address  +","+ item.location.lat  +","+item.location.lng }}' data-name='{{item.name}}'>
+    <text>{{item.name}}</text>
+    <text class='longAddress'>{{item.long_address}}</text>
+    </view>
+  </scroll-view>
+  <view class='tip' wx:if="{{tip!=''}}">{{tip}}</view>
+
+
+</view>
+<button class='clearStorage' wx:if='{{ hasStorage}}' bindtap='clearStorage'>清空历史记录</button>
